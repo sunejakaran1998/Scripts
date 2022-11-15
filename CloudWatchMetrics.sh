@@ -54,4 +54,4 @@ then
 else
 	echo "DIY"	
 fi
-echo "BYE..."
+echo "Acha mai nikalta hu.."
