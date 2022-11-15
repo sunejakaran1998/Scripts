@@ -51,6 +51,7 @@ if [ $answer == "y" ];
 then
         echo "inside if"
 	sudo echo "*/5 * * * * ~/aws-scripts-mon/mon-put-instance-data.pl --mem-util --disk-space-util --disk-path=/ --from-cron" >> /etc/crontab
-	
+else
+	echo "BYE..."	
 fi
-echo "BYE..."
+
