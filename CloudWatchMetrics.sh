@@ -17,10 +17,10 @@ echo -e " $(tput setaf 1) $(tput bold)Installing Required Ubuntu Packages$(tput 
 
 echo -ne 'Progress ====>                     (33%)\r'
 sleep 0.3
-sudo apt-get install unzip -y
+sudo apt-get install unzip -y &> /dev/null
 echo -ne 'Progress =============>            (66%)\r'
 sleep 0.3
-sudo apt-get install libwww-perl libdatetime-perl -y
+sudo apt-get install libwww-perl libdatetime-perl -y &> /dev/null
 echo -ne "Progress ========================> (100%)\r"
 echo -ne '\n'
 sleep 0.3
