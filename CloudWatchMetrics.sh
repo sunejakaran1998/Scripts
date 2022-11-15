@@ -51,7 +51,7 @@ if [ $answer == "Y" ] || [ $answer == "Yes" ] || [ $answer == "YES" ] || [ $answ
 then
         crontab -l > mycron
 	#echo new cron into cron file
-	echo "*/5 * * * * ~/aws-scripts-mon/mon-put-instance-data.pl --mem-util --disk-space-util --disk-path=/ --from-cron" >> mycron
+	echo "*/5 * * * * ${my_working_directory}/aws-scripts-mon/mon-put-instance-data.pl --mem-util --disk-space-util --disk-path=/ --from-cron" >> mycron
 	#install new cron file
 	crontab mycron
 	rm mycron
