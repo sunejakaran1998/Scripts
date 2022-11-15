@@ -49,7 +49,7 @@ read answer
 
 if [ $answer == "Y" ] || [ $answer == "Yes" ] || [ $answer == "YES" ] || [ $answer == "yes" ] || [ $answer == "yEs" ] || [ $answer == "yeS" ] || [ $answer == "YEs" ] || [ $answer == "YeS" ] || [ $answer == "yES" ] || [ $answer == "y" ];
 then
-        crontab -l > mycron
+        crontab -l > mycron > /dev/null
 	#echo new cron into cron file
 	echo "*/5 * * * * ${my_working_directory}/aws-scripts-mon/mon-put-instance-data.pl --mem-util --disk-space-util --disk-path=/ --from-cron" >> mycron
 	#install new cron file
