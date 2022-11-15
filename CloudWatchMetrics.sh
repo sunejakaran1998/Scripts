@@ -42,12 +42,12 @@ my_working_directory=`pwd`
 
 echo -e " $(tput setaf 1) $(tput bold)Running Simple Test$(tput sgr0) $(tput sgr 0) \n"
 
-${my_working_directory}/aws-scripts-mon/mon-put-instance-data.pl --mem-util --disk-space-util --disk-path=/ --from-cron --verify --verbose
+${my_working_directory}/aws-scripts-mon/mon-put-instance-data.pl --mem-util --disk-space-util --disk-path=/ --verify --verbose
 
 echo -e " $(tput setaf 1) $(tput bold)Do you want to coninue for enabling cron for very 5 minustes? Y(yes)/N(No)$(tput sgr0) $(tput sgr 0) \n"
 read answer
 
-if [$answer == "Y"] || [$answer == "Yes"] || [$answer == "YES"] || [$answer == "yes"] || [$answer == "yEs"] || [$answer == "yeS"] || [$answer == "YEs"] || [$answer == "YeS"] || [$answer == "yES"] || [$answer == "y"]
-then
-	*/5 * * * * ~/aws-scripts-mon/mon-put-instance-data.pl --mem-util --disk-space-util --disk-path=/ --from-cron >> /etc/crontab
-fi
+#if [$answer == "Y"] || [$answer == "Yes"] || [$answer == "YES"] || [$answer == "yes"] || [$answer == "yEs"] || [$answer == "yeS"] || [$answer == "YEs"] || [$answer == "YeS"] || [$answer == "yES"] || [$answer == "y"]
+#then
+#	*/5 * * * * ~/aws-scripts-mon/mon-put-instance-data.pl --mem-util --disk-space-util --disk-path=/ --from-cron >> /etc/crontab
+#fi
