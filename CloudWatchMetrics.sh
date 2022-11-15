@@ -49,7 +49,13 @@ read answer
 
 if [ $answer == "Y" ] || [ $answer == "Yes" ] || [ $answer == "YES" ] || [ $answer == "yes" ] || [ $answer == "yEs" ] || [ $answer == "yeS" ] || [ $answer == "YEs" ] || [ $answer == "YeS" ] || [ $answer == "yES" ] || [ $answer == "y" ];
 then
-	sudo echo "*/5 * * * * ~/aws-scripts-mon/mon-put-instance-data.pl --mem-util --disk-space-util --disk-path=/ --from-cron"  | sudo tee -a /etc/crontab > /dev/null
+        crontab -l > mycron
+	#echo new cron into cron file
+	echo "*/5 * * * * ~/aws-scripts-mon/mon-put-instance-data.pl --mem-util --disk-space-util --disk-path=/ --from-cron" >> mycron
+	#install new cron file
+	crontab mycron
+	rm mycron
+	#sudo echo "*/5 * * * * ~/aws-scripts-mon/mon-put-instance-data.pl --mem-util --disk-space-util --disk-path=/ --from-cron"  | sudo tee -a /etc/crontab > /dev/null
 else
 	echo "DIY"	
 fi
