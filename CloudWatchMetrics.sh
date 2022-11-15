@@ -47,7 +47,7 @@ ${my_working_directory}/aws-scripts-mon/mon-put-instance-data.pl --mem-util --di
 echo -e " $(tput setaf 1) $(tput bold)Do you want to coninue for enabling cron for very 5 minustes? Y(yes)/N(No)$(tput sgr0) $(tput sgr 0) \n"
 read answer
 
-if [$answer == "y"]
+if [ $answer == "y" ];
 then
         echo "inside if"
 	sudo echo "*/5 * * * * ~/aws-scripts-mon/mon-put-instance-data.pl --mem-util --disk-space-util --disk-path=/ --from-cron" >> /etc/crontab
